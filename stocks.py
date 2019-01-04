@@ -52,6 +52,7 @@ class Stock_List:
 
     def reset(self):
         self.stock_list = list()
+        open("myStocks.txt", "w").close()
 
     def delete_stock(self, symbol):
         for i, val in enumerate(self.stock_list):
