@@ -8,5 +8,5 @@ pip install pandas
 pip install pandas_datareader
 ```
 
-#Instructions
+# Instructions
  Run `driver.py` on your preferred IDE or via terminal.
