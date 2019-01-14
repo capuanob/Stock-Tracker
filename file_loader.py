@@ -7,7 +7,7 @@ class File_Loader:
     def load_list(self, buffer):
         isSymbol = True
         symbol = ""
-        fullName = ""
+        name = ""
 
         for char in buffer:
             if char == '|':
@@ -15,12 +15,11 @@ class File_Loader:
                 continue
             if char == '-':
                 break
-
             if isSymbol:
                 symbol += char
             else:
-                fullName += char
-        self.full_names.append(fullName)
+                name += char
+        self.full_names.append(name)
         self.symbols.append(symbol)
 
     def read_file(self):
