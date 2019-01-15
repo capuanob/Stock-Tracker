@@ -74,14 +74,14 @@ class Stock_List:
             print("You cannot unfollow a stock that you do not already follow.")
 
     def get_stock_data(self, symbol):
-        d = datetime.today()
-
+        d = datetime.now()
+        start = datetime(d.year, d.month, d.day)
         if d.weekday() >= 5:
             d = datetime.today() - timedelta(days=2)
             d = datetime(d.year, d.month, d.day, 17, 0, 0, 0)
-
+            start = datetime(d.year, d.month, d.day)
         try:
-            df = web.DataReader(symbol, 'yahoo', d, d)
+            df = web.DataReader(symbol, 'yahoo', start, start)
             print(df)
         except Exception:
             print("Error connecting with Finance API.")
